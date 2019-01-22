@@ -1,5 +1,7 @@
 import javax.swing.JFrame;
 import java.awt.event.*;
+import java.awt.*;
+import javax.swing.*;
 
 public class MyFrame extends JFrame implements KeyListener{
 
@@ -27,7 +29,7 @@ public class MyFrame extends JFrame implements KeyListener{
 			System.out.println("position: " + myDraw.x + "," + myDraw.y);
 		}
 	}
-	
+
 	public void keyReleased(KeyEvent e){
 
 	}
