@@ -12,11 +12,7 @@ public class MyFrame extends JFrame implements KeyListener{
 	}
 
 	public void keyPressed(KeyEvent e){
-		if(e.getKeyCode() == KeyEvent.VK_UP){
-			myDraw.moveUp();
-			System.out.println("position: " + myDraw.x + "," + myDraw.y);
-		}
-		else if(e.getKeyCode() == KeyEvent.VK_DOWN){
+		if(e.getKeyCode() == KeyEvent.VK_DOWN){
 			myDraw.moveDown();
 			System.out.println("position: " + myDraw.x + "," + myDraw.y);
 		}
@@ -27,6 +23,27 @@ public class MyFrame extends JFrame implements KeyListener{
 		else if(e.getKeyCode() == KeyEvent.VK_LEFT){
 			myDraw.moveLeft();
 			System.out.println("position: " + myDraw.x + "," + myDraw.y);
+		}
+		else if(e.getKeyCode() == KeyEvent.VK_UP){
+			myDraw.jump();
+		}
+		else if(e.getKeyCode() == KeyEvent.VK_A){
+			myDraw.swrdAttack();
+		}
+		else if(e.getKeyCode() == KeyEvent.VK_S){
+			myDraw.bowAttack();
+		}
+		else if(e.getKeyCode() == KeyEvent.VK_D){
+			myDraw.punch();
+		}
+		else if(e.getKeyCode() == KeyEvent.VK_X){
+			myDraw.kick();
+		}
+		else if(e.getKeyCode() == KeyEvent.VK_Z){
+			myDraw.cast();
+		}
+		else if(e.getKeyCode() == KeyEvent.VK_SPACE){
+			myDraw.roll();
 		}
 	}
 
@@ -40,7 +57,7 @@ public class MyFrame extends JFrame implements KeyListener{
 	public static void main(String[] args) {
 		MyFrame gameFrame = new MyFrame();
 		
-		gameFrame.setSize(600, 600);
+		gameFrame.setSize(870, 490);
 		gameFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		gameFrame.setVisible(true);
 		gameFrame.getContentPane().add(gameFrame.myDraw);
