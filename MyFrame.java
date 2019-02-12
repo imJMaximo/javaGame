@@ -45,7 +45,7 @@ public class MyFrame extends JFrame implements KeyListener{
 		else if(e.getKeyCode() == KeyEvent.VK_SPACE){
 			myDraw.roll();
 		}
-		else if(e.getKeyCode() == KeyEvent.VK_SHIFT){
+		else if(e.getKeyCode() == KeyEvent.VK_ENTER){
 			myDraw.spawnEnemy();
 		}
 	}
@@ -63,6 +63,7 @@ public class MyFrame extends JFrame implements KeyListener{
 		gameFrame.setSize(870, 490);
 		gameFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		gameFrame.setVisible(true);
+		gameFrame.setResizable(false);
 		gameFrame.getContentPane().add(gameFrame.myDraw);
 		gameFrame.addKeyListener(gameFrame);
 		System.out.println("Practical Programming");	

@@ -12,7 +12,7 @@ public class Monster{
 	public int yPos = 300;
 	public int width = 0;
 	public int height = 0;
-	public int life = 20;
+	public int life = 30;
 	public boolean idle = true;
 	public boolean alive = true;
 	public boolean contact = false;
@@ -105,7 +105,7 @@ public class Monster{
 		if(alive){
 			Thread monThread = new Thread(new Runnable(){
 				public void run(){
-					for(int ctr = 0; ctr < 4; ctr++){
+					for(int ctr = 0; ctr < 5; ctr++){
 						try {					
 							resource = getClass().getResource("slime/die"+ctr+".png");
 							

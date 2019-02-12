@@ -23,9 +23,8 @@ public class Draw extends JComponent{
 
 	public Random randomizer;
 
-	// enemy
 	public int enemyCount;
-	Monster[] monsters = new Monster[10];
+	Monster[] monsters = new Monster[20];
 
 	public Draw(){
 		randomizer = new Random();
@@ -67,8 +66,8 @@ public class Draw extends JComponent{
 	}
 
 	public void spawnEnemy(){
-		if(enemyCount < 10){
-			monsters[enemyCount] = new Monster(randomizer.nextInt(500), randomizer.nextInt(500), this);
+		if(enemyCount < 20){
+			monsters[enemyCount] = new Monster(randomizer.nextInt(800), randomizer.nextInt(400), this);
 			enemyCount++;
 		}
 	}
@@ -164,7 +163,7 @@ public class Draw extends JComponent{
 				for(int x=0; x<monsters.length; x++){
 					if(monsters[x]!=null){
 						if(monsters[x].contact){
-							monsters[x].life = monsters[x].life - 10;
+							monsters[x].life = monsters[x].life - 15;
 						}
 					}
 				}
@@ -236,7 +235,7 @@ public class Draw extends JComponent{
 				for(int x=0; x<monsters.length; x++){
 					if(monsters[x]!=null){
 						if(monsters[x].contact){
-							monsters[x].life = monsters[x].life - 10;
+							monsters[x].life = monsters[x].life - 5;
 						}
 					}
 				}
@@ -272,7 +271,7 @@ public class Draw extends JComponent{
 				for(int x=0; x<monsters.length; x++){
 					if(monsters[x]!=null){
 						if(monsters[x].contact){
-							monsters[x].life = monsters[x].life - 10;
+							monsters[x].life = monsters[x].life - 5;
 						}
 					}
 				}
@@ -347,7 +346,7 @@ public class Draw extends JComponent{
 				for(int x=0; x<monsters.length; x++){
 					if(monsters[x]!=null){
 						if(monsters[x].contact){
-							monsters[x].life = monsters[x].life - 10;
+							monsters[x].life = monsters[x].life - 15;
 						}
 					}
 				}
@@ -360,22 +359,26 @@ public class Draw extends JComponent{
 		y = y - 10;
 		reloadImage();
 		repaint();
+		checkCollision();
 	}
 
 	public void moveDown(){
 		y = y + 10;
 		reloadImage();
 		repaint();
+		checkCollision();
 	}
 	public void moveRight(){
 		x = x + 10;
 		reloadImage();
 		repaint();
+		checkCollision();
 	}
 	public void moveLeft(){
 		x = x - 10;
 		reloadImage();
 		repaint();
+		checkCollision();
 	}
 
 		public void checkCollision(){
