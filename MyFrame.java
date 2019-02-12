@@ -25,7 +25,7 @@ public class MyFrame extends JFrame implements KeyListener{
 			System.out.println("position: " + myDraw.x + "," + myDraw.y);
 		}
 		else if(e.getKeyCode() == KeyEvent.VK_UP){
-			myDraw.jump();
+			myDraw.moveUp();
 		}
 		else if(e.getKeyCode() == KeyEvent.VK_A){
 			myDraw.swrdAttack();
@@ -36,7 +36,7 @@ public class MyFrame extends JFrame implements KeyListener{
 		else if(e.getKeyCode() == KeyEvent.VK_D){
 			myDraw.punch();
 		}
-		else if(e.getKeyCode() == KeyEvent.VK_X){
+		else if(e.getKeyCode() == KeyEvent.VK_W){
 			myDraw.kick();
 		}
 		else if(e.getKeyCode() == KeyEvent.VK_Z){
@@ -44,6 +44,9 @@ public class MyFrame extends JFrame implements KeyListener{
 		}
 		else if(e.getKeyCode() == KeyEvent.VK_SPACE){
 			myDraw.roll();
+		}
+		else if(e.getKeyCode() == KeyEvent.VK_SHIFT){
+			myDraw.spawnEnemy();
 		}
 	}
 
